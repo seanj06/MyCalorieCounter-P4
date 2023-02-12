@@ -6,4 +6,4 @@ class HomeView(TemplateView):
     View to render homepage
     """
 
-    template_name = "base.html"
+    template_name = "index.html"
