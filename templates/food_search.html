@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="row justify-content-center">
+    {{api}}
+    <div class="col-md-8 text-center">
+        <form method="POST">
+            {%csrf_token%}
+            <div class="input-group input-group-lg mb-5">
+                <input type="text" name="query" class="form-control inputstyle" placeholder="search for calories"
+                    required>
+                <button type="submit" class="btn btn-primary" id="button-addon2">Find Calories</button>
+            </div>
+        </form>
+        {% if api %}
+        {% if api == "something went wrong" %}
+        <div class="alert alert-warning">Something went wrong</div>
+        {% else %}
+        <h1>{{api.0.name}} has {{api.0.calories}} calories per 100g</h1>
+
+    </div>
+    {% endif %}
+    {% endif %}
+</div>
+{% endblock %}
