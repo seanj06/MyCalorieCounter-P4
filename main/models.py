@@ -13,3 +13,14 @@ class Food(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class FoodCategory(models.Model):
+    category_name = models.CharField(max_length=50)
+
+    class Meta:
+        verbose_name = 'Food Category'
+        verbose_name_plural = 'Food Categories'
+
+    def __str__(self):
+        return f'{self.category_name}'
